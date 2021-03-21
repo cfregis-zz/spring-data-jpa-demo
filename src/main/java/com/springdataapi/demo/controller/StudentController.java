@@ -22,11 +22,15 @@ import com.springdataapi.demo.service.StudentService;
 @RestController
 @RequestMapping("/api")
 public class StudentController {
+	
+	
     StudentService studentservice;
+  
     @Autowired
     public StudentController(StudentService studentservice) {
         this.studentservice = studentservice;
     }
+    
     @GetMapping(value="/students")
     public List<Student> getAllStudents(){
         return studentservice.getAllStudents();

@@ -24,14 +24,19 @@ import lombok.experimental.Accessors;
 @Entity
 @Table(name = "student")
 public class Student implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	private static final long serialVersionUID = -6756721318250489712L;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+
 	@NotEmpty(message = "First name is required")
 	private String firstname;
+	
 	@NotEmpty(message = "Last name is required")
 	private String lastname;
+	
 	@Column(nullable = true, name = "email")
 	private String email;
 }
